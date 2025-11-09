@@ -37,7 +37,7 @@ impl From<MyButton> for AnyElement {
 
 impl Styled for MyButton {
     fn style(&mut self) ->  &mut StyleRefinement {
-       &mut self.base.interactivity().base_style
+        self.base.style()
     }
 }
 impl ParentElement for MyButton {

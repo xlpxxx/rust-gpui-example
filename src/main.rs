@@ -1,7 +1,7 @@
 use gpui::{
-    AnyElement, AppContext, Application, Bounds, Corners, Div, ElementId, EventEmitter, ParentElement, Render, SharedString, Stateful, StyleRefinement, WindowBounds, WindowOptions, div, prelude::*, px, size
+    AnyElement, AppContext, Application, Bounds, Div, ElementId, EventEmitter, ParentElement,
+    Render, SharedString, Stateful, StyleRefinement, WindowBounds, WindowOptions, div, prelude::*, px, size
 };
-use gpui_component::StyledExt;
 
 struct MyApp {
     count: i32
@@ -60,7 +60,6 @@ impl RenderOnce for MyButton {
             .p_2()
             .bg(gpui::black())
             .border_2()
-            .corner_radii(Corners::all(px(10.0)))
             .border_color(gpui::white())
             .when_some(self.label, |this, label| {
                 this

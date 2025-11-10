@@ -1,6 +1,5 @@
 use gpui::{
-    AnyElement, AppContext, Application, Bounds, Div, ElementId, EventEmitter, ParentElement,
-    Render, SharedString, Stateful, StyleRefinement, WindowBounds, WindowOptions, div, prelude::*, px, size
+    AnyElement, AppContext, Application, Bounds, Div, ElementId, EventEmitter, ParentElement, Render, SharedString, Stateful, Style, StyleRefinement, WindowBounds, WindowOptions, div, prelude::*, px, size
 };
 
 struct MyApp {
@@ -40,6 +39,7 @@ impl Styled for MyButton {
         self.base.style()
     }
 }
+
 impl ParentElement for MyButton {
     fn extend(&mut self, elements: impl IntoIterator<Item = AnyElement>) {
         self.children.extend(elements);
@@ -61,6 +61,7 @@ impl RenderOnce for MyButton {
             .bg(gpui::black())
             .border_2()
             .border_color(gpui::white())
+            .rounded(px(10.0))
             .when_some(self.label, |this, label| {
                 this
                     .text_color(gpui::white())
